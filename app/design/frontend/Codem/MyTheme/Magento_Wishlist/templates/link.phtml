@@ -1,0 +1,43 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/* @var \Magento\Wishlist\Block\Link $block */
+?>
+<li class="cus-account" >
+<a class="cus-text" href="http://magento.localhost:8888/customer/account/">&emsp;<span><i class="fa fa-user"></span></i>&nbsp;My Account</a>
+</li>
+<li class="link wishlist" data-bind="scope: 'wishlist'">
+    <a <?= /* @noEscape */ $block->getLinkAttributes() ?>>
+    <span><i class="fa fa-heart"></i>
+    <span class="wishtext"><?= $block->escapeHtml(__('Wishlist  ')) ?></span>
+        <!-- ko if: wishlist().counter -->
+        <!-- <span class="counter qty"
+              data-bind="css: { empty: !!wishlist().counter == false && !isLoading() },
+               blockLoader: isLoading">
+            <span class="counter-number">
+            </span>
+            <span class="counter-label">
+            </span>
+        </span>  -->
+        <!-- <span data-bind="text: wishlist().counter" class="counter qty"></span> -->
+        <!-- /ko -->
+    </a>
+</li>
+
+<script type="text/x-magento-init"> 
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "wishlist": {
+                        "component": "Magento_Wishlist/js/view/wishlist"
+                    }
+                }
+            }
+        }
+    }
+
+</script>

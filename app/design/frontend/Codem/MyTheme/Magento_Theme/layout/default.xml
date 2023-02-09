@@ -1,0 +1,17 @@
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <update handle="default_head_blocks"/>
+    <head>
+    <css src="https://use.fontawesome.com/releases/v5.2.0/css/all.css" src_type="url" />
+    </head>
+    <body>
+        <!-- <referenceContainer name="header.panel" remove="true" /> -->
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="copyright" remove="true" />
+        <!-- <referenceBlock name="authorization-link" remove="true" /> -->
+         <move element="wish-list-link" destination="header-wrapper" before="minicart"/>
+         <!-- <move element="customer-welcome" destination="header-wrapper" before="wish-list-link"/> -->
+         
+    </body>
+
+</page>
+
